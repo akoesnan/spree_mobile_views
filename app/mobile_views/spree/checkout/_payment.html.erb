@@ -12,7 +12,7 @@
     <div id="payment-methods">
       <% @order.available_payment_methods.each do |method| %>
         <fieldset>
-          <%= render "checkout/payment/#{method.method_type}", :payment_method => method %>
+          <%= render "spree/checkout/payment/#{method.method_type}", :payment_method => method %>
         </fieldset>
         </li>
       <% end %>

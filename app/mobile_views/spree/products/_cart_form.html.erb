@@ -1,11 +1,11 @@
 <%= form_for :order, :url => populate_orders_path do |f| %>
 <%= hook :inside_product_cart_form do %>
 
-  <% if product_price(@product) %>
+  <% if @product.price %>
     <%= hook :product_price do %>
       <p class="prices">
         <%= t("price") %>: 
-        <span class="price selling"><strong><%= product_price(@product) %></strong></span>
+        <span class="price selling"><strong><%= number_to_currency @product.price ) %></strong></span>
       </p>
     <% end %>
   <% end %>
